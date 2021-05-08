@@ -131,6 +131,79 @@
         // result will 11
     -->
 
+    <h3>PHP variables scope</h3>
+    <p>PHP has three different variable scopes:</p>
+    <ul>
+        <li>local</li>
+        <li>global</li>
+        <li>static</li>
+    </ul>
+
+    <p>A variable declared outside a function has a GLOBAL SCOPE and can only be accessed outside a function:</p>
+
+    <!--
+        <?php
+        $x = 5; // global scope
+
+        function myTest() {
+        // using x inside this function will generate an error
+        echo "<p>Variable x inside function is: $x</p>";
+        }
+        myTest();
+
+        echo "<p>Variable x outside function is: $x</p>";
+        ?>
+
+        //result   
+        Variable x inside function is:
+
+        Variable x outside function is: 5
+    -->
+
+    <p>A variable declared within a function has a LOCAL SCOPE and can only be accessed within that function:</p>
+
+    <!--
+        <?php
+        function myTest() {
+        $x = 5; // local scope
+        echo "<p>Variable x inside function is: $x</p>";
+        }
+        myTest();
+
+        // using x outside the function will generate an error
+        echo "<p>Variable x outside function is: $x</p>";
+        ?>
+
+        //result 
+        Variable x inside function is: 5
+
+        Variable x outside function is:
+
+    -->
+
+    <p>You can have local variables with the same name in different functions, because local variables are only recognized by the function in which they are declared.</p>
+
+    <h3>PHP global keyword</h3>
+    <p>The global keyword is used to access a global variable from within a function.</p>
+
+    <!--
+        <?php
+        $x = 5;
+        $y = 10;
+
+        function myTest() {
+        global $x, $y;
+        $y = $x + $y;
+        } 
+
+        myTest();  // run function
+        echo $y; // output the new value for variable $y
+        ?>
+
+        // result will be 15
+    -->
+    
+
 
     
 </body>
