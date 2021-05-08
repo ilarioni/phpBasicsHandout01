@@ -7,6 +7,7 @@
     <title>phpBasicsHandout</title>
 </head>
 <body>
+    <h1>examples of PHP syntax</h1>
 
     <!--
         <?php 
@@ -16,17 +17,43 @@
         // result My PHP script!
     -->
 
+    <h3>creating variables </h3>
+
     <!--
         <?php
         $txt = "PHP";
-        echo = "I love using $txt !";
+        echo "I love using $txt !";
         ?>
 
         // result I love using PHP
     -->
-    
-    
-    
+
+    <h3>PHP is not case sensitive</h3>
+
+    <!--
+        <?php
+        ECHO "Hello World!<br>";
+        echo "Hello World!<br>";
+        EcHo "Hello World!<br>"
+        ?>
+
+        // results will be same
+    -->
+
+    <h3>But all created variable names are case-sensitive</h3>
+
+    <!--
+        <?php
+        $color = "red";
+        echo "My car is $color". "<br>";
+        echo "My house is $COLOR". "<br>";
+        echo "My boat is $coLOR". "<br>";
+        ?>
+
+        // result only first example will be shown
+    -->
+
+
     
 </body>
 </html>
