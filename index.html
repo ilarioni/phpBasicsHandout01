@@ -202,9 +202,51 @@
 
         // result will be 15
     -->
+
+    <p>PHP also stores all global variables in an array called $GLOBALS[index]. The index holds the name of the variable.</p>
+
+    <!--
+        <?php
+        $x = 5;
+        $y = 10;
+
+        function myTest() {
+        $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+        } 
+
+        myTest();
+        echo $y;
+        ?>
+    -->
+
+    <h3>PHP static keyword</h3>
+    <p>Normally, when a function is completed/executed, all of its variables are deleted. However, sometimes we want a local variable NOT to be deleted. We need it for a further job.</p>
+
+    <!--
+        <?php
+        function myTest() {
+            static $x = 0;
+            echo $x;
+            $x++;
+        }
+
+        myTest();
+        echo "<br>";
+        myTest();
+        echo "<br>";
+        myTest();
+        ?> 
+
+        //result
+        0
+        1
+        2
+
+    -->
+
+    <h1>PHP echo and print statements</h1>
     
 
 
-    
 </body>
 </html>
