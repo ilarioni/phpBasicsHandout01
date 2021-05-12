@@ -414,7 +414,40 @@
         }
     -->
 
+    <h3>php Object</h3>
 
+    <p>Classes and objects are the two main aspects of object-oriented programming.</p>
+    <p>A class is a template for objects, and an object is an instance of a class.</p>
+    <p>When the individual objects are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties.</p>
+    <p>Let's assume we have a class named Car. A Car can have properties like model, color, etc. We can define variables like $model, $color, and so on, to hold the values of these properties.</p>
+    <p>When the individual objects (Volvo, BMW, Toyota, etc.) are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties.</p>
+    <p>If you create a __construct() function, PHP will automatically call this function when you create an object from a class.</p>
+
+    <!--
+        <?php
+        class Car {
+        public $color;
+        public $model;
+        public function __construct($color, $model) {
+            $this->color = $color;
+            $this->model = $model;
+        }
+        public function message() {
+            return "My car is a " . $this->color . " " . $this->model . "!";
+        }
+        }
+
+        $myCar = new Car("black", "Volvo");
+        echo $myCar -> message();
+        echo "<br>";
+        $myCar = new Car("red", "Toyota");
+        echo $myCar -> message();
+        ?>
+
+        // result
+        My car is a black Volvo!
+        My car is a red Toyota!
+    -->
 
 
 </body>
