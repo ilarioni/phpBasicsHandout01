@@ -521,6 +521,78 @@
         // result Hello Dolly!
     -->
 
+    <h3>php Numbers</h3>
+    <p>we will look in depth into Integers, Floats, and Number Strings.</p>
+
+    <p>An integer is a number without any decimal part.</p>
+
+    <h5>PHP has the following predefined constants for integers:</h5>
+    <ul>
+        <li>PHP_INT_MAX - The largest integer supported</li>
+        <li>PHP_INT_MIN - The smallest integer supported</li>
+        <li>PHP_INT_SIZE -  The size of an integer in bytes</li>
+    </ul>
+
+    <!--
+        <?php
+        // Check if the type of a variable is integer   
+        $x = 5985;
+        var_dump(is_int($x));
+
+        echo "<br>";
+
+        // Check again... 
+        $x = 59.85;
+        var_dump(is_int($x));
+        ?>
+
+        // result
+        bool(true)
+        bool(false)
+    -->
+
+    <h3>PHP Floats</h3>
+    <p>A float is a number with a decimal point or a number in exponential form.</p>
+    <p>2.0, 256.4, 10.358, 7.64E+5, 5.56E-5 are all floats.</p>
+
+    <p>PHP has the following predefined constants for floats (from PHP 7.2):</p>
+    <ul>
+        <li>PHP_FLOAT_MAX - The largest representable floating point number</li>
+        <li>PHP_FLOAT_MIN - The smallest representable positive floating point number</li>
+        <li>- PHP_FLOAT_MAX - The smallest representable negative floating point number</li>
+        <li>PHP_FLOAT_DIG - The number of decimal digits that can be rounded into a float and back without precision loss</li>
+        <li>PHP_FLOAT_EPSILON - The smallest representable positive number x, so that x + 1.0 != 1.0</li>
+    </ul>
+
+    <!--
+        <?php
+        // Check if the type of a variable is float 
+        $x = 10.365;
+        var_dump(is_float($x));
+        ?> 
+
+        // result bool(true)
+    -->
+
+    <h3>PHP Infinity</h3>
+    <p>A numeric value that is larger than PHP_FLOAT_MAX is considered infinite.</p>
+
+    <p>PHP has the following functions to check if a numeric value is finite or infinite:</p>
+    <ul>
+        <li>is_finite()</li>
+        <li>is_infinite()</li>
+    </ul>
+
+    <!--
+        <?php
+        // Check if a numeric value is finite or infinite 
+        $x = 1.9e411;
+        var_dump($x);
+        ?>
+
+        // result float(INF)
+    -->
+
 
 </body>
 </html>
