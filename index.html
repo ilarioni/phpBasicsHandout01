@@ -466,6 +466,60 @@
     -->
 
     <h3>php Strings</h3>
+    <p>A string is a sequence of characters, like "Hello world!".</p>
+
+    <h3>String Functions</h3>
+    <p>strlen() - Return the Length of a String</p>
+
+    <!--
+        <?php
+        echo strlen("Hello world!");
+        ?> 
+
+        // result 12
+    -->
+
+    <p>str_word_count() - Count Words in a String</p>
+
+    <!--
+        <?php
+        echo str_word_count("Hello world!");
+        ?> 
+
+        // result 2
+    -->
+
+    <p>strrev() - Reverse a String</p>
+
+    <!--
+        <?php
+        echo strrev("Hello world!");
+        ?> 
+
+        // result !dlrow olleH
+    -->
+
+    <p>strpos() - Search For a Text Within a String</p>
+    <p>The PHP strpos() function searches for a specific text within a string. If a match is found, the function returns the character position of the first match. If no match is found, it will return FALSE.</p>
+
+    <!--
+        <?php
+        echo strpos("Hello world!", "world");
+        ?>
+
+        // result 6 
+    -->
+
+    <p>str_replace() - Replace Text Within a String</p>
+
+    <p>The PHP str_replace() function replaces some characters with some other characters in a string.</p>
+    <!--
+        <?php
+        echo str_replace("world", "Dolly", "Hello world!");
+        ?>
+
+        // result Hello Dolly!
+    -->
 
 
 </body>
