@@ -593,6 +593,81 @@
         // result float(INF)
     -->
 
+    <h3>php NaN</h3>
+    <p>NaN stands for Not a Number.</p>
+    <p>NaN is used for impossible mathematical operations.</p>
+
+    <p>PHP has the following functions to check if a value is not a number:</p>
+    <ul>
+        <li>is_nan()</li>
+    </ul>
+
+    <!--
+        <?php
+        // Invalid calculation will return a NaN value
+        $x = acos(8);
+        var_dump($x);
+        ?> 
+
+        // result float(NaN)
+    -->
+
+    <h3>php Numerical Strings</h3>
+    <p>The PHP is_numeric() function can be used to find whether a variable is numeric. The function returns true if the variable is a number or a numeric string, false otherwise.</p>
+
+    <!--
+        <?php
+        // Check if the variable is numeric   
+        $x = 5985;
+        var_dump(is_numeric($x));
+
+        echo "<br>";
+
+        $x = "5985";
+        var_dump(is_numeric($x));
+
+        echo "<br>";
+
+        $x = "59.85" + 100;
+        var_dump(is_numeric($x));
+
+        echo "<br>";
+
+        $x = "Hello";
+        var_dump(is_numeric($x));
+        ?>  
+
+        // results 
+        bool(true)
+        bool(true)
+        bool(true)
+        bool(false)
+    -->
+
+    <h3>php Casting Strings and Floats to Integers</h3>
+    <p>Sometimes you need to cast a numerical value into another data type.</p>
+    <p>The (int), (integer), or intval() function are often used to convert a value to an integer.</p>
+
+    <!--
+        <?php
+        // Cast float to int 
+        $x = 23465.768;
+        $int_cast = (int)$x;
+        echo $int_cast;
+        
+        echo "<br>";
+
+        // Cast string to int
+        $x = "23465.768";
+        $int_cast = (int)$x;
+        echo $int_cast;
+        ?> 
+
+        // result 
+        23465
+        23465
+    -->
+
 
 </body>
 </html>
