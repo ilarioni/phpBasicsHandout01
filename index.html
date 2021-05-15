@@ -789,6 +789,33 @@
     -->
 
     <h3>php Constant Arrays</h3>
+    <p>In PHP7, you can create an Array constant using the define() function.</p>
+
+    <!--
+        <?php
+        define("cars", ["Alfa Romeo","BMW","Toyota"]);
+        echo cars[0];
+        ?>
+
+        // result Alfa Romeo
+    -->
+
+    <h3>Constants are Global</h3>
+    <p>Constants are automatically global and can be used across the entire script.</p>
+
+    <!--
+        <?php
+        define("GREETING", "Welcome to here!");
+
+        function myTest() {
+        echo GREETING;
+        }
+        
+        myTest();
+        ?>
+
+        // result  Welcome to here!
+    -->
 
 </body>
 </html>
