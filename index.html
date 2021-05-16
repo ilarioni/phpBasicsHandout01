@@ -1268,6 +1268,46 @@
         PHP Fatal error: Uncaught TypeError: Argument 2 passed to addNumbers() must be of the type integer, 
     -->
 
+    <h3>PHP Default Argument Value</h3>
+    <!--
+        <?php
+        function setHeight(int $minheight = 50) {
+        echo "The height is : $minheight <br>";
+        }
+
+        setHeight(350);
+        setHeight();
+        setHeight(135);
+        setHeight(80);
+        ?>
+
+        // result
+        The height is : 350
+        The height is : 50
+        The height is : 135
+        The height is : 80
+    -->
+
+    <h3>PHP Functions - Returning values</h3>
+
+    <!--
+        <?php
+        function sum(int $x, int $y) {
+        $z = $x + $y;
+        return $z;
+        }
+
+        echo "5 + 10 = " . sum(5,10) . "<br>";
+        echo "7 + 13 = " . sum(7,13) . "<br>";
+        echo "2 + 4 = " . sum(2,4);
+        ?>
+
+        // results 
+        5 + 10 = 15
+        7 + 13 = 20
+        2 + 4 = 6
+    -->
+
 
 
 
