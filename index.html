@@ -1308,6 +1308,47 @@
         2 + 4 = 6
     -->
 
+    <h3>PHP Return Type Declarations</h3>
+    <p>PHP 7 also supports Type Declarations for the return statement. Like with the type declaration for function arguments, by enabling the strict requirement, it will throw a "Fatal Error" on a type mismatch.</p>
+
+    <!--
+        <?php declare(strict_types=1); // strict requirement
+        function addNumbers(float $a, float $b) : float {
+        return $a + $b;
+        }
+        echo addNumbers(1.2, 5.2); 
+        ?>
+
+        // result 6.4
+    -->
+
+    <p>You can specify a different return type, than the argument types, but make sure the return is the correct type:</p>
+    <!--
+        <?php declare(strict_types=1); // strict requirement
+        function addNumbers(float $a, float $b) : int {
+        return (int)($a + $b);
+        }
+        echo addNumbers(1.2, 5.2); 
+        ?>
+
+        // result 6
+    -->
+
+    <p>passing arguments</p>
+    <!--
+        <?php
+        function add_five(&$value) {
+        $value += 5;
+        }
+
+        $num = 2;
+        add_five($num);
+        echo $num;
+        ?>
+
+        // result  - 7
+    -->
+
 
 
 
