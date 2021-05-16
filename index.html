@@ -977,6 +977,44 @@
         The number is: 100
     -->
 
+    <h3>PHP do while Loop</h3>
+
+    <p>The do...while loop - Loops through a block of code once, and then repeats the loop as long as the specified condition is true.</p>
+
+    <!--
+        <?php 
+        $x = 1;
+
+        do {
+            echo "The number is: $x <br>";
+            $x++;
+        } while ($x <= 5);
+        ?>
+
+        // results 
+        The number is: 1
+        The number is: 2
+        The number is: 3
+        The number is: 4
+        The number is: 5
+    -->
+
+    <p>In a do...while loop the condition is tested AFTER executing the statements within the loop. This means that the do...while loop will execute its statements at least once, even if the condition is false. See example below.</p>
+
+    <!--
+        <?php 
+        $x = 6;
+
+        do {
+            echo "The number is: $x <br>";
+            $x++;
+        } while ($x <= 5);
+        ?>
+
+        // results -- The number is: 6
+    -->
+
+
 
 
 </body>
