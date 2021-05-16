@@ -1194,6 +1194,49 @@
         Hello World!
     -->
 
+    <h3>PHP Function Arguments</h3>
+    <p>Information can be passed to functions through arguments. An argument is just like a variable.</p>
+    <p>Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.</p>
+
+    <!--
+        <?php
+        function familyName($fname) {
+        echo "$fname Refsnes.<br>";
+        }
+
+        familyName("Jani");
+        familyName("Hege");
+        familyName("Stale");
+        familyName("Kai Jim");
+        familyName("Borge");
+        ?>
+
+        // result
+        Jani Refsnes.
+        Hege Refsnes.
+        Stale Refsnes.
+        Kai Jim Refsnes.
+        Borge Refsnes.
+    -->
+
+    <p>The following example has a function with two arguments ($fname and $year):</p>
+    <!--
+        <?php
+        function familyName($fname, $year) {
+        echo "$fname Refsnes. Born in $year <br>";
+        }
+
+        familyName("Hege","1975");
+        familyName("Stale","1978");
+        familyName("Kai Jim","1983");
+        ?>
+
+        // results
+        Hege Refsnes. Born in 1975
+        Stale Refsnes. Born in 1978
+        Kai Jim Refsnes. Born in 1983
+    -->
+
 
 
 
