@@ -1412,7 +1412,47 @@
         BMW
         Toyota
     -->
-    
+
+    <h3>PHP Associative Arrays</h3>
+    <p>Associative arrays are arrays that use named keys that you assign to them.</p>
+
+    <p>There are two ways to create an associative array: </p>
+
+    <p>$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");</p>
+    <p>or</p>
+    <!--
+        $age['Peter'] = "35";
+        $age['Ben'] = "37";
+        $age['Joe'] = "43";
+    -->
+
+    <!--
+        <?php
+        $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+        echo "Peter is " . $age['Peter'] . " years old.";
+        ?>
+
+        // result Peter is 35 years old.
+    -->
+
+    <h3>Loop Through an Associative Array</h3>
+    <p>To loop through and print all the values of an associative array, you could use a foreach loop, like this:</p>
+
+    <!--
+        <?php
+        $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+        foreach($age as $x => $x_value) {
+        echo "Key=" . $x . ", Value=" . $x_value;
+        echo "<br>";
+        }
+        ?>
+
+        result 
+        Key=Peter, Value=35
+        Key=Ben, Value=37
+        Key=Joe, Value=43
+    -->
 
 
 
