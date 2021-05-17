@@ -1385,6 +1385,33 @@
         // result 3
     -->
 
+    <h3>PHP Indexed Arrays</h3>
+    <p>There are two ways to create indexed arrays:</p>
+
+    <!--
+        <?php
+        $cars = array("Volvo", "BMW", "Toyota"); 
+        echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+        ?>
+    -->
+
+    <p>To loop through and print all the values of an indexed array, you could use a for loop, like this:</p>
+    <!--
+        <?php
+        $cars = array("Volvo", "BMW", "Toyota");
+        $arrlength = count($cars);
+
+        for($x = 0; $x < $arrlength; $x++) {
+        echo $cars[$x];
+        echo "<br>";
+        }
+        ?>
+
+        // results 
+        Volvo
+        BMW
+        Toyota
+    -->
     
 
 
