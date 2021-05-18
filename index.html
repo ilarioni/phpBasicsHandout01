@@ -1670,6 +1670,46 @@
         Key=Peter, Value=35
     -->
 
+    <h3>Sort Array (Descending Order), According to Value - arsort()</h3>
+    <p>The following example sorts an associative array in descending order, according to the value:</p>
+
+    <!--
+        <?php
+        $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+        arsort($age);
+
+        foreach($age as $x => $x_value) {
+        echo "Key=" . $x . ", Value=" . $x_value;
+        echo "<br>";
+        }
+        ?>
+
+        // result 
+        Key=Joe, Value=43
+        Key=Ben, Value=37
+        Key=Peter, Value=35
+    -->
+
+    <h3>Sort Array (Descending Order), According to Key - krsort()</h3>
+    <p>The following example sorts an associative array in descending order, according to the key:</p>
+
+    <!--
+        <?php
+        $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+        krsort($age);
+
+        foreach($age as $x => $x_value) {
+        echo "Key=" . $x . ", Value=" . $x_value;
+        echo "<br>";
+        }
+        ?>
+
+        // result
+        Key=Peter, Value=35
+        Key=Joe, Value=43
+        Key=Ben, Value=37
+    -->
+
 
 
 </body>
