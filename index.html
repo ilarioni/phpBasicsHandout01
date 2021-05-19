@@ -1746,6 +1746,34 @@
     -->
 
     <h3>PHP $_SERVER</h3>
+    <p>$_SERVER is a PHP super global variable which holds information about headers, paths, and script locations.</p>
+    <p>The example below shows how to use some of the elements in $_SERVER:</p>
+
+    <!--
+        <?php
+        echo $_SERVER['PHP_SELF'];
+        echo "<br>";
+        echo $_SERVER['SERVER_NAME'];
+        echo "<br>";
+        echo $_SERVER['HTTP_HOST'];
+        echo "<br>";
+        echo $_SERVER['HTTP_REFERER'];
+        echo "<br>";
+        echo $_SERVER['HTTP_USER_AGENT'];
+        echo "<br>";
+        echo $_SERVER['SCRIPT_NAME'];
+        ?>
+
+        // result
+        /demo/demo_global_server.php
+        35.194.26.41
+        35.194.26.41
+        https://tryphp.w3schools.com/showphp.php?filename=demo_global_server
+        Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+        /demo/demo_global_server.php
+    -->
+
+    
 
 
 
