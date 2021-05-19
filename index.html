@@ -1783,6 +1783,28 @@
     <p>$_SERVER['REQUEST_TIME']  -- Returns the timestamp of the start of the request (such as 1377687496)</p>
     <p>and many others </p>
 
+    <h3>PHP $_REQUEST</h3>
+    <p>PHP $_REQUEST is a PHP super global variable which is used to collect data after submitting an HTML form.</p>
+
+    <!--
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+        Name: <input type="text" name="fname">
+        <input type="submit">
+        </form>
+
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // collect value of input field
+            $name = htmlspecialchars($_REQUEST['fname']);
+            if (empty($name)) {
+                echo "Name is empty";
+            } else {
+                echo $name;
+            }
+        }
+        ?>
+    -->
+
 
 
 </body>
