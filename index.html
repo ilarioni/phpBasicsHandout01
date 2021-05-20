@@ -1885,6 +1885,19 @@
     -->
 
     <h3>Grouping</h3>
+    <p>You can use parentheses ( ) to apply quantifiers to entire patterns. They also can be used to select parts of the pattern to be used as a match.</p>
+
+    <!--
+        <?php
+        $str = "Apples and bananas.";
+        $pattern = "/ba(na){2}/i";
+        echo preg_match($pattern, $str);
+        ?>
+
+        // result --  1
+    -->
+
+    <h3>PHP Form Handling</h3>
 
 
 
