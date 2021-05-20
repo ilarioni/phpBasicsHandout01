@@ -1834,6 +1834,42 @@
 
     <h3>PHP Regular Expressions - RegEx</h3>
     <p>What is a Regular Expression?</p>
+    <p>A regular expression is a sequence of characters that forms a search pattern. When you search for data in a text, you can use this search pattern to describe what you are searching for.</p>
+
+    <p>A regular expression can be a single character, or a more complicated pattern.</p>
+    <p>In PHP, regular expressions are strings composed of delimiters, a pattern and optional modifiers.</p>
+
+    <p>PHP provides a variety of functions that allow you to use regular expressions. The preg_match(), preg_match_all() and preg_replace() functions are some of the most commonly used ones:</p>
+
+    <p>preg_match()  --- Returns 1 if the pattern was found in the string and 0 if not</p>
+    <p>preg_match_all()  ---  Returns the number of times the pattern was found in the string, which may also be 0</p>
+    <p>preg_replace()  --- Returns a new string where matched patterns have been replaced with another string</p>
+
+    <h3>Using preg_match()</h3>
+    <p>The preg_match() function will tell you whether a string contains matches of a pattern.</p>
+
+    <!--
+        <?php
+        $str = "Visit W3Schools";
+        $pattern = "/w3schools/i";
+        echo preg_match($pattern, $str); 
+        ?>
+
+        // result 1
+    -->
+
+    <h3>Using preg_match_all()</h3>
+    <p>The preg_match_all() function will tell you how many matches were found for a pattern in a string.</p>
+
+    <!--
+        <?php
+        $str = "The rain in SPAIN falls mainly on the plains.";
+        $pattern = "/ain/i";
+        echo preg_match_all($pattern, $str);
+        ?>
+
+        // result 4
+    -->
 
 
 
