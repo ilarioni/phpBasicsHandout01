@@ -1952,6 +1952,88 @@
     <p>Moreover POST supports advanced functionality such as support for multi-part binary input while uploading files to server.</p>
     <p>However, because the variables are not displayed in the URL, it is not possible to bookmark the page.</p>
 
+    <h3>PHP Form Validation</h3>
+    <p>These pages will show how to process PHP forms with security in mind. Proper validation of form data is important to protect your form from hackers and spammers!</p>
+    <p>The HTML form we will be working at in these chapters, contains various input fields: required and optional text fields, radio buttons, and a submit button:</p>
+    <p>The validation rules for the form above are as follows:</p>
+    <p>Name  --- Required. + Must only contain letters and whitespace</p>
+    <p>E-mail -- Required. + Must contain a valid email address (with @ and .)</p>
+
+    <p>The name, email, and website fields are text input elements, and the comment field is a textarea. The HTML code looks like this:</p>
+    Name: <input type="text" name="name">
+    E-mail: <input type="text" name="email">
+    Website: <input type="text" name="website">
+    Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+
+    <p>he gender fields are radio buttons and the HTML code looks like this:</p>
+    Gender:
+    <input type="radio" name="gender" value="female">Female
+    <input type="radio" name="gender" value="male">Male
+    <input type="radio" name="gender" value="other">Other
+
+    <h3>The Form Element</h3>
+    <p>The HTML code of the form looks like this:</p>
+    <!--
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+    -->
+    <p>When the form is submitted, the form data is sent with method="post".</p>
+
+    <p>Validate Form Data With PHP</p>
+
+    <?php
+    // define variables and set to empty values
+    $name = $email = $gender = $comment = $website = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = test_input($_POST["name"]);
+    $email = test_input($_POST["email"]);
+    $website = test_input($_POST["website"]);
+    $comment = test_input($_POST["comment"]);
+    $gender = test_input($_POST["gender"]);
+    }
+
+    function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+    }
+    ?>
+
+    <h2>PHP Form Validation Example</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    Name: <input type="text" name="name">
+    <br><br>
+    E-mail: <input type="text" name="email">
+    <br><br>
+    Website: <input type="text" name="website">
+    <br><br>
+    Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+    <br><br>
+    Gender:
+    <input type="radio" name="gender" value="female">Female
+    <input type="radio" name="gender" value="male">Male
+    <input type="radio" name="gender" value="other">Other
+    <br><br>
+    <input type="submit" name="submit" value="Submit">  
+    </form>
+
+    <?php
+    echo "<h2>Your Input:</h2>";
+    echo $name;
+    echo "<br>";
+    echo $email;
+    echo "<br>";
+    echo $website;
+    echo "<br>";
+    echo $comment;
+    echo "<br>";
+    echo $gender;
+    ?>
+   
+
+    
+    
 
 
 </body>
