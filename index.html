@@ -1934,7 +1934,18 @@
     -->
 
     <p>The code above is quite simple. However, the most important thing is missing. You need to validate form data to protect your script from malicious code.</p>
-    
+
+    <h3>GET vs. POST</h3>
+    <p>Both GET and POST create an array (e.g. array( key1 => value1, key2 => value2, key3 => value3, ...)). This array holds key/value pairs, where keys are the names of the form controls and values are the input data from the user.</p>
+    <p>Both GET and POST are treated as $_GET and $_POST. These are superglobals, which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.</p>
+
+    <p>$_GET is an array of variables passed to the current script via the URL parameters.</p>
+    <p>$_POST is an array of variables passed to the current script via the HTTP POST method.</p>
+
+    <h3>When to use GET?</h3>
+    <p>Information sent from a form with the GET method is visible to everyone (all variable names and values are displayed in the URL). GET also has limits on the amount of information to send. The limitation is about 2000 characters. However, because the variables are displayed in the URL, it is possible to bookmark the page. This can be useful in some cases.</p>
+    <p>GET may be used for sending non-sensitive data.</p>
+    <p>Note: GET should NEVER be used for sending passwords or other sensitive information!</p>
 
 
 
