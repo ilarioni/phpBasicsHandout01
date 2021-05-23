@@ -2421,6 +2421,86 @@
     <h3>PHP Include Files</h3>
     <p>The include (or require) statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement.</p>
 
+    <p>Including files is very useful when you want to include the same PHP, HTML, or text on multiple pages of a website.</p>
+    <p>It is possible to insert the content of one PHP file into another PHP file (before the server executes it), with the include or require statement.</p>
+    <p>The include and require statements are identical, except upon failure:</p>
+    <ul>
+        <li>require will produce a fatal error (E_COMPILE_ERROR) and stop the script</li>
+        <li>include will only produce a warning (E_WARNING) and the script will continue</li>
+    </ul>
+
+    <p>So, if you want the execution to go on and show users the output, even if the include file is missing, use the include statement. Otherwise, in case of FrameWork, CMS, or a complex PHP application coding, always use the require statement to include a key file to the flow of execution. This will help avoid compromising your application's security and integrity, just in-case one key file is accidentally missing.</p>
+
+    <p>example</p>
+    <h1>Welcome to my home page!</h1>
+    <p>Some text.</p>
+    <p>Some more text.</p>
+    <?php include 'footer.php';?>
+
+    <!--
+        // results
+        Welcome to my home page!
+        Some text.
+        Some more text.
+        Copyright © 1999-2021 W3Schools.com
+    -->
+
+    <div class="menu">
+    <?php include 'menu.php';?>
+    </div>
+    
+    <h1>Welcome to my home page!</h1>
+    <p>Some text.</p>
+    <p>Some more text.</p>
+
+    <!--
+        // results 
+        Home - HTML Tutorial - CSS Tutorial - JavaScript Tutorial - PHP 7 Tutorial
+        Welcome to my home page!
+        Some text.
+
+        Some more text.
+    -->
+
+    <h1>Welcome to my home page!</h1>
+    <?php include 'vars.php';
+    echo "I have a $color $car.";
+    ?>
+
+    <p>
+        Welcome to my home page!
+        I have a red BMW.
+    </p>
+
+    <h3>PHP include vs. require</h3>
+    <p>The require statement is also used to include a file into the PHP code.</p>
+    <p>However, there is one big difference between include and require; when a file is included with the include statement and PHP cannot find it, the script will continue to execute:</p>
+
+    <h1>Welcome to my home page!</h1>
+    <?php include 'noFileExists.php';
+    echo "I have a $color $car.";
+    ?>
+
+    <!--
+        // results 
+        Welcome to my home page!
+        I have a .
+    -->
+    
+    <p>If we do the same example using the require statement, the echo statement will not be executed because the script execution dies after the require statement returned a fatal error:</p>
+
+    <h1>Welcome to my home page!</h1>
+    <?php require 'noFileExists.php';
+    echo "I have a $color $car.";
+    ?>
+
+    <!--
+        // result
+        Welcome to my home page!
+    -->
+
+    <p>Use require when the file is required by the application.</p>
+    <p>Use include when the file is not required and application should continue when file is not found.</p>
     
 
 </body>
