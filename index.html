@@ -2382,7 +2382,43 @@
 
     <h3>Advanced php</h3>
     <p>php Date and Time</p>
+    <p>The PHP date() function is used to format a date and/or a time.</p>
+    <p>The required format parameter of the date() function specifies how to format the date (or time).</p>
 
+    <!--
+        <?php
+        echo "Today is " . date("Y/m/d") . "<br>";
+        echo "Today is " . date("Y.m.d") . "<br>";
+        echo "Today is " . date("Y-m-d") . "<br>";
+        echo "Today is " . date("l");
+        ?>
+
+        // result
+        Today is 2020/11/03
+        Today is 2020.11.03
+        Today is 2020-11-03
+        Today is Tuesday
+    -->
+
+    <p>Use the date() function to automatically update the copyright year on your website:</p>
+
+    <!--
+        © 2010-<?php echo date("Y");?>
+
+        // result
+        © 2010-2020
+    -->
+
+    <!--
+        <?php
+        echo "The time is " . date("h:i:sa");
+        ?>
+
+        // result
+        The time is - current time
+    -->
+
+    
 
 </body>
 </html>
