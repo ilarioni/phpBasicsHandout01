@@ -2505,6 +2505,36 @@
     <h1>PHP File Handling</h1>
     <p>File handling is an important part of any web application. You often need to open and process a file for different tasks.</p>
 
+    <p>PHP Manipulating Files</p>
+    <p>PHP has several functions for creating, reading, uploading, and editing files.</p>
+
+    <h3>PHP readfile() Function</h3>
+    <p>The readfile() function reads a file and writes it to the output buffer.</p>
+    <p>Assume we have a text file called "webdictionary.txt", stored on the server, that looks like this:</p>
+    <ul>
+        <li>AJAX = Asynchronous JavaScript and XML</li>
+        <li>CSS = Cascading Style Sheets</li>
+        <li>HTML = Hyper Text Markup Language</li>
+        <li>PHP = PHP Hypertext Preprocessor</li>
+        <li>SQL = Structured Query Language</li>
+        <li>SVG = Scalable Vector Graphics</li>
+        <li>XML = EXtensible Markup Language</li>
+    </ul>
+
+    <p>The PHP code to read the file and write it to the output buffer is as follows (the readfile() function returns the number of bytes read on success):</p>
+
+    <!--
+        <?php
+        echo readfile("webdictionary.txt");
+        ?>
+
+        // result
+        AJAX = Asynchronous JavaScript and XML CSS = Cascading Style Sheets HTML = Hyper Text Markup Language PHP = PHP Hypertext Preprocessor SQL = Structured Query Language SVG = Scalable Vector Graphics XML = EXtensible Markup Language236
+
+    -->
+    <p>The readfile() function is useful if all you want to do is open up a file and read its contents.</p>
     
+
+
 </body>
 </html>
