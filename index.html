@@ -2612,6 +2612,24 @@
         XML = EXtensible Markup Language
     -->
 
+    <h3>PHP Read Single Character - fgetc()</h3>
+    <p>The fgetc() function is used to read a single character from a file.</p>
+    <p>The example below reads the "webdictionary.txt" file character by character, until end-of-file is reached:</p>
+
+    <!--
+        <?php
+        $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+        // Output one character until end-of-file
+        while(!feof($myfile)) {
+        echo fgetc($myfile);
+        }
+        fclose($myfile);
+        ?>
+
+        // result - without <br>
+        AJAX = Asynchronous JavaScript and XML CSS = Cascading Style Sheets HTML = Hyper Text Markup Language PHP = PHP Hypertext Preprocessor SQL = Structured Query Language SVG = Scalable Vector Graphics XML = EXtensible Markup Language
+
+    -->
     
     
 
