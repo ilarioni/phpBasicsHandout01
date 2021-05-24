@@ -2533,8 +2533,46 @@
 
     -->
     <p>The readfile() function is useful if all you want to do is open up a file and read its contents.</p>
-    
 
+    <h3>PHP File Open/Read/Close</h3>
+    <p>A better method to open files is with the fopen() function. This function gives you more options than the readfile() function.</p>
+    <p>We will use the text file, "webdictionary.txt", during the lessons:</p>
+
+    <p>The first parameter of fopen() contains the name of the file to be opened and the second parameter specifies in which mode the file should be opened.</p>
+
+    <!--
+        <?php
+        $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+        echo fread($myfile,filesize("webdictionary.txt"));
+        fclose($myfile);
+        ?>
+
+        // result 
+        AJAX = Asynchronous JavaScript and XML CSS = Cascading Style Sheets HTML = Hyper Text Markup Language PHP = PHP Hypertext Preprocessor SQL = Structured Query Language SVG = Scalable Vector Graphics XML = EXtensible Markup Language
+
+    -->
+
+    <h3>PHP Read File - fread()</h3>
+    <p>The fread() function reads from an open file.</p>
+    <p>The first parameter of fread() contains the name of the file to read from and the second parameter specifies the maximum number of bytes to read.</p>
+
+    <p>The following PHP code reads the "webdictionary.txt" file to the end:</p>
+    <p>fread($myfile,filesize("webdictionary.txt"));</p>
+
+    <h3>PHP Close File - fclose()</h3>
+    <p>The fclose() function is used to close an open file.</p>
+    <p>It's a good programming practice to close all files after you have finished with them. You don't want an open file running around on your server taking up resources!</p>
+    <p>The fclose() requires the name of the file (or a variable that holds the filename) we want to close:</p>
+
+    <!--
+        <?php
+        $myfile = fopen("webdictionary.txt", "r");
+        // some code to be executed....
+        fclose($myfile);
+        ?>
+    -->
+
+    <h3>PHP Read Single Line - fgets()</h3>
 
 </body>
 </html>
