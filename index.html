@@ -2573,6 +2573,21 @@
     -->
 
     <h3>PHP Read Single Line - fgets()</h3>
+    <p>The fgets() function is used to read a single line from a file.</p>
+    <p>The example below outputs the first line of the "webdictionary.txt" file:</p>
+
+    <!--
+        <?php
+        $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+        echo fgets($myfile);
+        fclose($myfile);
+        ?>
+
+        // results
+        AJAX = Asynchronous JavaScript and XML
+    -->
+
+    
 
 </body>
 </html>
