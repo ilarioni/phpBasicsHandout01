@@ -2876,7 +2876,54 @@
         Note: You might have to reload the page to see the new value of the cookie.
     -->
 
+    <h3>Delete a Cookie</h3>
+    <p>To delete a cookie, use the setcookie() function with an expiration date in the past:</p>
+    <!--
+        <!DOCTYPE html>
+        <?php
+        // set the expiration date to one hour ago
+        setcookie("user", "", time() - 3600);
+        ?>
+        <html>
+        <body>
+
+        <?php
+        echo "Cookie 'user' is deleted.";
+        ?>
+
+        </body>
+        </html>
+    -->
+
+    <h3>Check if Cookies are Enabled</h3>
+    <p>The following example creates a small script that checks whether cookies are enabled. First, try to create a test cookie with the setcookie() function, then count the $_COOKIE array variable:</p>
+
+    <!--
+        <!DOCTYPE html>
+        <?php
+        setcookie("test_cookie", "test", time() + 3600, '/');
+        ?>
+        <html>
+        <body>
+
+        <?php
+        if(count($_COOKIE) > 0) {
+            echo "Cookies are enabled.";
+        } else {
+            echo "Cookies are disabled.";
+        }
+        ?>
+
+        </body>
+        </html>
+
+        // result
+        Cookies are enabled.
+    -->
+
     
+
+
 
 
 
