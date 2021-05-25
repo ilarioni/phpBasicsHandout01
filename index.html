@@ -2632,6 +2632,24 @@
     -->
 
     <h1>PHP File Create/Write</h1>
+    <p>The fopen() function is also used to create a file. Maybe a little confusing, but in PHP, a file is created using the same function used to open files.</p>
+    <p>If you use fopen() on a file that does not exist, it will create it, given that the file is opened for writing (w) or appending (a).</p>
+    <p>$myfile = fopen("testfile.txt", "w")</p>
+
+    <h3>PHP Write to File - fwrite()</h3>
+    <p>The fwrite() function is used to write to a file.</p>
+    <p>The first parameter of fwrite() contains the name of the file to write to and the second parameter is the string to be written.</p>
+
+    <!--
+        <?php
+        $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+        $txt = "John Doe\n";
+        fwrite($myfile, $txt);
+        $txt = "Jane Doe\n";
+        fwrite($myfile, $txt);
+        fclose($myfile);
+        ?>
+    -->
     
     
 
