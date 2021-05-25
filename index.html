@@ -2721,5 +2721,29 @@
         <li>Next, check if the image file is an actual image or a fake image</li>
     </ol>
 
+    <h3>Check if File Already Exists</h3>
+    <p>First, we will check if the file already exists in the "uploads" folder. If it does, an error message is displayed, and $uploadOk is set to 0:</p>
+
+    <!--
+        // Check if file already exists
+        if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+        }
+    -->
+
+    <h3>limit file size</h3>
+    <p>The file input field in our HTML form above is named "fileToUpload".</p>
+    <p>Now, we want to check the size of the file. If the file is larger than 500KB, an error message is displayed, and $uploadOk is set to 0:</p>
+
+    <!--
+        // Check file size
+        if ($_FILES["fileToUpload"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+        }
+    -->
+    
+
 </body>
 </html>
