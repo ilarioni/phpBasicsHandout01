@@ -2230,3 +2230,5 @@ echo "All session variables are now removed, and the session is destroyed."
 
 </body>
 </html>
+
+// PHP Filters
