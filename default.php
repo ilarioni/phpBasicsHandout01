@@ -2127,3 +2127,61 @@ echo "Session variables are set.";
 // Session variables are set.
 ?>
 
+<?php
+// Note: The session_start() function must be the very first thing in your document. Before any HTML tags.
+?>
+
+// Get PHP Session Variable Values
+
+<?php
+// Next, we create another page called "demo_session2.php". From this page, we will access the session information we set on the first page ("demo_session1.php").
+// Notice that session variables are not passed individually to each new page, instead they are retrieved from the session we open at the beginning of each page (session_start()).
+// Also notice that all session variable values are stored in the global $_SESSION variable:
+?>
+
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// Echo session variables that were set on previous page
+echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";
+echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
+?>
+
+</body>
+</html>
+
+<?php
+// result
+// Favorite color is .
+// Favorite animal is .
+?>
+
+// Another way to show all the session variable values for a user session is to run the following code:
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+print_r($_SESSION);
+?>
+
+</body>
+</html>
+
+// result
+// Array ( )
+
+<?php
+// How does it work? How does it know it's me?
+// Most sessions set a user-key on the user's computer that looks something like this: 765487cf34ert8dede5a562e4f3a7e12.
+// Then, when a session is opened on another page, it scans the computer for a user-key. 
+// If there is a match, it accesses that session, if not, it starts a new session.
+?>
