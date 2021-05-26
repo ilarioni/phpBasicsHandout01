@@ -1,3 +1,225 @@
+<h3>php If statement</h3>
+    <p>The if statement executes some code if one condition is true.</p>
+
+    <!--
+        <?php
+        $t = date("H");
+
+        if ($t < "20") {
+        echo "Have a good day!";
+        }
+        ?>
+    -->
+
+    <h3>PHP - The if...else Statement</h3>
+    <p>The if...else statement executes some code if a condition is true and another code if that condition is false.</p>
+
+    <!--
+        <?php
+        $t = date("H");
+
+        if ($t < "20") {
+        echo "Have a good day!";
+        } else {
+        echo "Have a good night!";
+        }
+        ?>
+
+        // result - Have a good day!
+    -->
+
+    <h3>PHP - The if...elseif...else Statement</h3>
+    <p>The if...elseif...else statement executes different codes for more than two conditions.</p>
+
+    <!--
+        <?php
+        $t = date("H");
+        echo "<p>The hour (of the server) is " . $t; 
+        echo ", and will give the following message:</p>";
+
+        if ($t < "10") {
+        echo "Have a good morning!";
+        } elseif ($t < "20") {
+        echo "Have a good day!";
+        } else {
+        echo "Have a good night!";
+        }
+        ?>
+
+        // result -- The hour (of the server) is 10, and will give the following message: Have a good day!
+    -->
+
+    <h3>PHP switch Statement</h3>
+    <p>The switch statement is used to perform different actions based on different conditions.</p>
+    <p>Use the switch statement to select one of many blocks of code to be executed.</p>
+
+    <!--
+        <?php
+        $favcolor = "yellow";
+
+        switch ($favcolor) {
+        case "red":
+            echo "Your favorite color is red!";
+            break;
+        case "blue":
+            echo "Your favorite color is blue!";
+            break;
+        case "green":
+            echo "Your favorite color is green!";
+            break;
+        default:
+            echo "Your favorite color is neither red, blue, nor green!";
+        }
+        ?>
+
+        // result -- Your favorite color is neither red, blue, nor green!
+    -->
+
+    <h3>PHP Loops</h3>
+    <p>Often when you write code, you want the same block of code to run over and over again a certain number of times. So, instead of adding several almost equal code-lines in a script, we can use loops.</p>
+
+    <p>In PHP, we have the following loop types:</p>
+    <ul>
+        <li>while - loops through a block of code as long as the specified condition is true</li>
+        <li>do...while - loops through a block of code once, and then repeats the loop as long as the specified condition is true</li>
+        <li>for - loops through a block of code a specified number of times</li>
+        <li>foreach - loops through a block of code for each element in an array</li>
+    </ul>
+
+    <h3>The PHP while Loop</h3>
+    <p>The while loop executes a block of code as long as the specified condition is true.</p>
+
+    <!--
+        <?php  
+        $x = 1;
+        
+        while($x <= 5) {
+            echo "The number is: $x <br>";
+            $x++;
+        } 
+        ?>
+
+        // results 
+
+        The number is: 1
+        The number is: 2
+        The number is: 3
+        The number is: 4
+        The number is: 5
+    -->
+
+    <!--
+        <?php  
+        $x = 0;
+        
+        while($x <= 100) {
+            echo "The number is: $x <br>";
+            $x+=10;
+        }
+        ?> 
+        
+        // results 
+        The number is: 0
+        The number is: 10
+        The number is: 20
+        The number is: 30
+        The number is: 40
+        The number is: 50
+        The number is: 60
+        The number is: 70
+        The number is: 80
+        The number is: 90
+        The number is: 100
+    -->
+
+    <h3>PHP do while Loop</h3>
+
+    <p>The do...while loop - Loops through a block of code once, and then repeats the loop as long as the specified condition is true.</p>
+
+    <!--
+        <?php 
+        $x = 1;
+
+        do {
+            echo "The number is: $x <br>";
+            $x++;
+        } while ($x <= 5);
+        ?>
+
+        // results 
+        The number is: 1
+        The number is: 2
+        The number is: 3
+        The number is: 4
+        The number is: 5
+    -->
+
+    <p>In a do...while loop the condition is tested AFTER executing the statements within the loop. This means that the do...while loop will execute its statements at least once, even if the condition is false. See example below.</p>
+
+    <!--
+        <?php 
+        $x = 6;
+
+        do {
+            echo "The number is: $x <br>";
+            $x++;
+        } while ($x <= 5);
+        ?>
+
+        // results -- The number is: 6
+    -->
+
+    <h3>The PHP for Loop</h3>
+    <p>The for loop - Loops through a block of code a specified number of times.</p>
+    <p>The for loop is used when you know in advance how many times the script should run.</p>
+
+    <!--
+        <?php  
+        for ($x = 0; $x <= 10; $x++) {
+            echo "The number is: $x <br>";
+        }
+        ?>
+
+        // result 
+        The number is: 0
+        The number is: 1
+        The number is: 2
+        The number is: 3
+        The number is: 4
+        The number is: 5
+        The number is: 6
+        The number is: 7
+        The number is: 8
+        The number is: 9
+        The number is: 10
+    -->
+
+
+    <!--
+        <?php  
+        for ($x = 0; $x <= 100; $x+=10) {
+            echo "The number is: $x <br>";
+        }
+        ?>
+
+        // result 
+        The number is: 0
+        The number is: 10
+        The number is: 20
+        The number is: 30
+        The number is: 40
+        The number is: 50
+        The number is: 60
+        The number is: 70
+        The number is: 80
+        The number is: 90
+        The number is: 100
+    -->
+
+
+
+
+
 <h3>The PHP foreach Loop</h3>
     <p>The foreach loop works only on arrays, and is used to loop through each key/value pair in an array.</p>
 
