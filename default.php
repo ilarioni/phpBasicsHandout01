@@ -2185,3 +2185,25 @@ print_r($_SESSION);
 // Then, when a session is opened on another page, it scans the computer for a user-key. 
 // If there is a match, it accesses that session, if not, it starts a new session.
 ?>
+
+// Modify a PHP Session Variable
+// To change a session variable, just overwrite it:
+
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// to change a session variable, just overwrite it
+$_SESSION["favcolor"] = "yellow";
+print_r($_SESSION);
+?>
+
+</body>
+</html>
+
+// result 
+// Array ( [favcolor] => yellow )
