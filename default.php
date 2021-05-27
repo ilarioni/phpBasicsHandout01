@@ -2303,5 +2303,73 @@ if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
 ?>
 // result Integer is valid
 
+Tip: filter_var() and Problem With 0
+In the example above, if $int was set to 0, the function above will return "Integer is not valid". To solve this problem, use the code below:
+
+<?php
+$int = 0;
+
+if (filter_var($int, FILTER_VALIDATE_INT) === 0 || !filter_var($int, FILTER_VALIDATE_INT) === false) {
+  echo("Integer is valid");
+} else {
+  echo("Integer is not valid");
+}
+?>
+
+// result -- Integer is valid
+
+Validate an IP Address
+The following example uses the filter_var() function to check if the variable $ip is a valid IP address:
+
+<?php
+$ip = "127.0.0.1";
+
+if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
+  echo("$ip is a valid IP address");
+} else {
+  echo("$ip is not a valid IP address");
+}
+?>
+
+// result -- 127.0.0.1 is a valid IP address
+
+
+Sanitize and Validate an Email Address
+The following example uses the filter_var() function to first remove all illegal characters from the $email variable, then check if it is a valid email address:
+
+<?php
+$email = "john.doe@example.com";
+
+// Remove all illegal characters from email
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+// Validate e-mail
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+  echo("$email is a valid email address");
+} else {
+  echo("$email is not a valid email address");
+}
+?>
+
+// result --- john.doe@example.com is a valid email address
+
+Sanitize and Validate a URL
+The following example uses the filter_var() function to first remove all illegal characters from a URL, then check if $url is a valid URL:
+
+<?php
+$url = "https://www.w3schools.com";
+
+// Remove all illegal characters from a url
+$url = filter_var($url, FILTER_SANITIZE_URL);
+
+// Validate url
+if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
+  echo("$url is a valid URL");
+} else {
+  echo("$url is not a valid URL");
+}
+?>
+
+// result --- https://www.w3schools.com is a valid URL
 
 
