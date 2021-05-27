@@ -2509,4 +2509,36 @@ printFormatted("Hello world", "ask");
 
 // result --  Hello world! Hello world?
 
+/////
+PHP and JSON
+
+JSON stands for JavaScript Object Notation, and is a syntax for storing and exchanging data.
+Since the JSON format is a text-based format, it can easily be sent to and from a server, and used as a data format by any programming language.
+
+PHP has some built-in functions to handle JSON.
+First, we will look at the following two functions: json_encode()  and json_decode()
+
+
+PHP - json_encode()
+The json_encode() function is used to encode a value to JSON format.
+
+<?php
+$age = array("Peter"=>35, "Ben"=>37, "Joe"=>43);
+
+echo json_encode($age);
+?>
+
+//  result -- {"Peter":35,"Ben":37,"Joe":43}
+
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+
+echo json_encode($cars);
+?>
+
+// result --- ["Volvo","BMW","Toyota"]
+
+
+
+
 
