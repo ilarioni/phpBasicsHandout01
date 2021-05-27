@@ -2270,3 +2270,38 @@ You should always validate external data!
 Invalid submitted data can lead to security problems and break your webpage!
 By using PHP filters you can be sure your application gets the correct input!
 
+PHP filter_var() Function
+
+The filter_var() function both validate and sanitize data.
+
+The filter_var() function filters a single variable with a specified filter. It takes two pieces of data:
+    The variable you want to check
+    The type of check to use
+
+The following example uses the filter_var() function to remove all HTML tags from a string:
+
+<?php
+$str = "<h1>Hello World!</h1>";
+$newstr = filter_var($str, FILTER_SANITIZE_STRING);
+echo $newstr;
+?>
+
+// result -- Hello World!
+
+Validate Integer
+The following example uses the filter_var() function to check if the variable $int is an integer. 
+If $int is an integer, the output of the code below will be: "Integer is valid". If $int is not an integer, the output will be: "Integer is not valid":
+
+<?php
+$int = 100;
+
+if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
+  echo("Integer is valid");
+} else {
+  echo("Integer is not valid");
+}
+?>
+// result Integer is valid
+
+
+
