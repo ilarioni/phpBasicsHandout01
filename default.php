@@ -2485,3 +2485,28 @@ Array
     [3] => 7
 )
 
+Callbacks in User Defined Functions
+User-defined functions and methods can also take callback functions as arguments. To use callback functions inside a user-defined function or method, call it by adding parentheses to the variable and pass arguments as with normal functions:
+
+<?php
+function exclaim($str) {
+  return $str . "! ";
+}
+
+function ask($str) {
+  return $str . "? ";
+}
+
+function printFormatted($str, $format) {
+  // Calling the $format callback function
+  echo $format($str);
+}
+
+// Pass "exclaim" and "ask" as callback functions to printFormatted()
+printFormatted("Hello world", "exclaim");
+printFormatted("Hello world", "ask");
+?>
+
+// result --  Hello world! Hello world?
+
+
