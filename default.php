@@ -2373,3 +2373,6 @@ if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
 // result --- https://www.w3schools.com is a valid URL
 
 
+PHP Filters Advanced
+
+
