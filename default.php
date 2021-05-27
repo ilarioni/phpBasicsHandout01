@@ -2561,8 +2561,4 @@ var_dump(json_decode($jsonobj, true));
 
 // result ---  array(3) { ["Peter"]=> int(35) ["Ben"]=> int(37) ["Joe"]=> int(43) }
 
-
-
-
-
-
+PHP - Accessing the Decoded Values
