@@ -2232,3 +2232,41 @@ echo "All session variables are now removed, and the session is destroyed."
 </html>
 
 // PHP Filters
+<?php
+// Validating data = Determine if the data is in proper form.
+// Sanitizing data = Remove any illegal character from the data.
+?>
+
+// php filter extension
+<?php
+// PHP filters are used to validate and sanitize external input.
+// The PHP filter extension has many of the functions needed for checking user input, and is designed to make data validation easier and quicker.
+// The filter_list() function can be used to list what the PHP filter extension offers:
+?>
+
+<table>
+  <tr>
+    <td>Filter Name</td>
+    <td>Filter ID</td>
+  </tr>
+  <?php
+  foreach (filter_list() as $id =>$filter) {
+    echo '<tr><td>' . $filter . '</td><td>' . filter_id($filter) . '</td></tr>';
+  }
+  ?>
+</table>
+
+// Why Use Filters?
+<p> Many web applications receive external input. External input/data can be:</p>
+<ul>
+    <li>User input from a form</li>
+    <li>Cookies</li>
+    <li>Web services data</li>
+    <li>Server variables</li>
+    <li>Database query results</li>
+</ul>
+
+You should always validate external data!
+Invalid submitted data can lead to security problems and break your webpage!
+By using PHP filters you can be sure your application gets the correct input!
+
