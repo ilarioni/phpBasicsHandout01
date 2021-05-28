@@ -2676,3 +2676,34 @@ try {
 
 // result  ---  Unable to divide.
 
+The catch block indicates what type of exception should be caught and the name of the variable which can be used to access the exception.
+In the example above, the type of exception is Exception and the variable name is $e.
+
+
+The try...catch...finally Statement
+
+The try...catch...finally statement can be used to catch exceptions.
+Code in the finally block will always run regardless of whether an exception was caught.
+If finally is present, the catch block is optional.
+
+<?php
+function divide($dividend, $divisor) {
+  if($divisor == 0) {
+    throw new Exception("Division by zero");
+  }
+  return $dividend / $divisor;
+}
+
+try {
+  echo divide(5, 0);
+} catch(Exception $e) {
+  echo "Unable to divide. "; 
+} finally {
+  echo "<br>Process complete.";
+}
+?>
+
+// result --- 
+Unable to divide.
+Process complete.
+
