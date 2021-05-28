@@ -2562,3 +2562,30 @@ var_dump(json_decode($jsonobj, true));
 // result ---  array(3) { ["Peter"]=> int(35) ["Ben"]=> int(37) ["Joe"]=> int(43) }
 
 PHP - Accessing the Decoded Values
+Here are two examples of how to access the decoded values from an object and from an associative array:
+
+<?php
+$jsonobj = '{"Peter":35,"Ben":37,"Joe":43}';
+
+$obj = json_decode($jsonobj);
+
+echo $obj->Peter;
+echo $obj->Ben;
+echo $obj->Joe;
+?>
+
+// result 353743
+
+<?php
+$jsonobj = '{"Peter":35,"Ben":37,"Joe":43}';
+
+$arr = json_decode($jsonobj, true);
+
+echo $arr["Peter"];
+echo $arr["Ben"];
+echo $arr["Joe"];
+?>
+
+// result 353743
+
+PHP - Looping Through the Values
