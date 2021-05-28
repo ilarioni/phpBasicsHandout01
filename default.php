@@ -2753,3 +2753,4 @@ try {
 // result --- Exception thrown in /home/TwT0ln/prog.php on line 8: [Code 1] Division by zero
 
 
+PHP - What is OOP?
