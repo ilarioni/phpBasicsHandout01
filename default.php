@@ -2778,3 +2778,5 @@ When the individual objects are created, they inherit all the properties and beh
 
 
 
+PHP OOP - Classes and Objects
+
