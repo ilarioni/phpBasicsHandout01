@@ -3262,11 +3262,39 @@ A class is defined by using the class keyword, followed by the name of the class
     result is following:
     The fruit is Strawberry, the color is red, and the weight is 50 gram.
 
+    <h1> PHP - The final Keyword </h1>
+
+    The final keyword can be used to prevent class inheritance or to prevent method overriding.
+    The following example shows how to prevent class inheritance:
+
+    <?php
+    final class Fruit {
+    // some code
+    }
+
+    // will result in error
+    class Strawberry extends Fruit {
+    // some code
+    }
+    ?>
+
+    The following example shows how to prevent method overriding:
+
+    <?php
+    class Fruit {
+        final public function intro() {
+            // some code
+        }
+    }
+
+    class Strawberry extends Fruit {
+        // will result in error
+        public function intro() {
+            // some code
+        }
+    }
+    ?>
+
     
-
-
-
-
-
 
 
