@@ -3295,6 +3295,43 @@ A class is defined by using the class keyword, followed by the name of the class
     }
     ?>
 
+    <h1> PHP OOP - Class Constants </h1>
+    Constants cannot be changed once it is declared.
+    Class constants can be useful if you need to define some constant data within a class.
+
+    A class constant is declared inside a class with the const keyword.
+
+    Class constants are case-sensitive. However, it is recommended to name the constants in all uppercase letters.
+
+    We can access a constant from outside the class by using the class name followed by the scope resolution operator (::) followed by the constant name, like here:
+
+    <?php
+    class Goodbye {
+        const LEAVING_MESSAGE = "Thank you for visiting us!";
+    }
+
+    echo Goodbye::LEAVING_MESSAGE;
+    ?>
+
+    result is following:
+    Thank you for visiting us!
+
+    <?php
+    class Goodbye {
+    const LEAVING_MESSAGE = "Thank you for visiting our school!";
+        public function byebye() {
+            echo self::LEAVING_MESSAGE;
+        }
+    }
+
+    $goodbye = new Goodbye();
+    $goodbye->byebye();
+    ?>
+
+    result is following:
+    Thank you for visiting our school!
+
     
+
 
 
