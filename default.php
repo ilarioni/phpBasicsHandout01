@@ -3541,6 +3541,5 @@ A class is defined by using the class keyword, followed by the name of the class
     ?>
 
     
-
-
+    PHP OOP - Interfaces
 
