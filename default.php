@@ -3628,3 +3628,6 @@ A class is defined by using the class keyword, followed by the name of the class
     Since the interface does not tell the classes how to implement the method, each animal can make a sound in its own way.
 
     PHP - Traits
+
+    PHP only supports single inheritance: a child class can inherit only from one single parent.
+    
