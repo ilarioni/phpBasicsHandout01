@@ -3710,4 +3710,6 @@ A class is defined by using the class keyword, followed by the name of the class
     OOP is fun! OOP reduces code duplication!
 
     Here, we declare two traits: message1 and message2. Then, we create two classes: Welcome and Welcome2. The first class (Welcome) uses the message1 trait, and the second class (Welcome2) uses both message1 and message2 traits (multiple traits are separated by comma).
+
+    PHP OOP - Static Methods
     
