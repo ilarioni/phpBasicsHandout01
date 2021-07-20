@@ -3712,4 +3712,94 @@ A class is defined by using the class keyword, followed by the name of the class
     Here, we declare two traits: message1 and message2. Then, we create two classes: Welcome and Welcome2. The first class (Welcome) uses the message1 trait, and the second class (Welcome2) uses both message1 and message2 traits (multiple traits are separated by comma).
 
     PHP OOP - Static Methods
+    Static methods can be called directly - without creating an instance of the class first.
+    Static methods are declared with the static keyword:
+
+    Syntax is following:
+    <?php
+    class ClassName {
+        public static function staticMethod() {
+            echo "Hello World!";
+        }
+    }
+    ?>
+
+    To access a static method use the class name, double colon (::), and the method name:
+
+    Syntax is following:
+    ClassName::staticMethod();
+
+    Let's look at an example:
+    <?php
+    class greeting {
+        public static function welcome() {
+            echo "Hello World!";
+        }
+    }
+
+    // Call static method
+    greeting::welcome();
+    ?>
+
+    result is following:
+    Hello World!
+
+    Example Explained
+    Here, we declare a static method: welcome(). Then, we call the static method by using the class name, double colon (::), and the method name (without creating an instance of the class first).
+
+    More on Static Methods
+    A class can have both static and non-static methods. A static method can be accessed from a method in the same class using the self keyword and double colon (::):
+
+    <?php
+    class greeting {
+        public static function welcome() {
+            echo "Hello World!";
+        }
+    public function __construct() {
+            self::welcome();
+        }
+    }
+
+    new greeting();
+    ?>
+
+    result:
+    Hello World!
+
+    Static methods can also be called from methods in other classes. To do this, the static method should be public:
+
+    <?php
+    class greeting {
+        public static function welcome() {
+            echo "Hello World!";
+        }
+    }
+
+    class SomeOtherClass {
+        public function message() {
+            greeting::welcome();
+        }
+    }
+    ?>
+
+    To call a static method from a child class, use the parent keyword inside the child class. Here, the static method can be public or protected.
+
+    <?php
+    class domain {
+        protected static function getWebsiteName() {
+            return "W3Schools.com";
+        }
+    }
+
+    class domainW3 extends domain {
+        public $websiteName;
+        public function __construct() {
+            $this->websiteName = parent::getWebsiteName();
+        }
+    }
+
+    $domainW3 = new domainW3;
+    echo $domainW3 -> websiteName;
+    ?>
+
     
