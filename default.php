@@ -3802,4 +3802,38 @@ A class is defined by using the class keyword, followed by the name of the class
     echo $domainW3 -> websiteName;
     ?>
 
-    Static Properties
+    Static Properties 
+
+    Static properties can be called directly - without creating an instance of a class.
+    Static properties are declared with the static keyword:
+    syntax is following:
+
+    <?php
+    class ClassName {
+        public static $staticProp = "W3Schools";
+    }
+    ?>
+
+    To access a static property use the class name, double colon (::), and the property name:
+
+    syntax is following:
+    ClassName::staticProp;
+
+    Let's look at an example:
+
+    <?php
+    class pi {
+        public static $value = 3.14159;
+    }
+
+    // Get static property
+    echo pi::$value;
+    ?>
+
+    result is following: 
+    3.14159
+
+    Example Explained
+    Here, we declare a static property: $value. Then, we echo the value of the static property by using the class name, double colon (::), and the property name (without creating a class first).
+
+    
