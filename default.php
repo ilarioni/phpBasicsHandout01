@@ -4249,5 +4249,7 @@ A class is defined by using the class keyword, followed by the name of the class
     echo $hint === "" ? "no suggestion" : $hint;
     ?>
 
+
     AJAX Database - AJAX and MySQL
-    
+    AJAX can be used for interactive communication with a database.
+
