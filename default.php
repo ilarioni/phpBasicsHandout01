@@ -4291,7 +4291,59 @@ A class is defined by using the class keyword, followed by the name of the class
     <br>
     <div id="txtHint"><b>Person info will be listed here...</b></div>
 
+    Code explanation:
+
+    First, check if person is selected. If no person is selected (str == ""), clear the content of txtHint and exit the function. If a person is selected, do the following:
+
+        Create an XMLHttpRequest object
+        Create the function to be executed when the server response is ready
+        Send the request off to a file on the server
+        Notice that a parameter (q) is added to the URL (with the content of the dropdown list)
+
+    
+    The PHP File
+    The page on the server called by the JavaScript above is a PHP file called "getuser.php".
+    The source code in "getuser.php" runs a query against a MySQL database, and returns the result in an HTML table:
+
+    <?php
+    $q = intval($_GET['q']);
+
+    $con = mysqli_connect('localhost','peter','abc123','my_db');
+    if (!$con) {
+        die('Could not connect: ' . mysqli_error($con));
+    }
+
+    mysqli_select_db($con,"ajax_demo");
+    $sql="SELECT * FROM user WHERE id = '".$q."'";
+    $result = mysqli_query($con,$sql);
+
+    echo "<table>
+    <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+    <th>Hometown</th>
+    <th>Job</th>
+    </tr>";
+    while($row = mysqli_fetch_array($result)) {
+    echo "<tr>";
+    echo "<td>" . $row['FirstName'] . "</td>";
+    echo "<td>" . $row['LastName'] . "</td>";
+    echo "<td>" . $row['Age'] . "</td>";
+    echo "<td>" . $row['Hometown'] . "</td>";
+    echo "<td>" . $row['Job'] . "</td>";
+    echo "</tr>";
+    }
+    echo "</table>";
+    mysqli_close($con);
+    ?>
+
+    Explanation: When the query is sent from the JavaScript to the PHP file, the following happens:
+
+        PHP opens a connection to a MySQL server
+        The correct person is found
+        An HTML table is created, filled with data, and sent back to the "txtHint" placeholder
+
     
 
 
-    
