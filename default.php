@@ -4428,4 +4428,55 @@ A class is defined by using the class keyword, followed by the name of the class
         Find all <artist> elements that matches the name sent from the JavaScript
         Output the album information (send to the "txtHint" placeholder)
 
+    AJAX Live Search
+
+    AJAX can be used to create more user-friendly and interactive searches.
+
+    AJAX Live Search
+    The following example will demonstrate a live search, where you get search results while you type.
+
+    Live search has many benefits compared to traditional searching:
+
+        Results are shown as you type
+        Results narrow as you continue typing
+        If results become too narrow, remove characters to see a broader result
+    
+    When a user types a character in the input field above, the function "showResult()" is executed. The function is triggered by the "onkeyup" event:
+    <script>
+    function showResult(str) {
+        if (str.length==0) {
+            document.getElementById("livesearch").innerHTML="";
+            document.getElementById("livesearch").style.border="0px";
+            return;
+        }
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function() {
+            if (this.readyState==4 && this.status==200) {
+            document.getElementById("livesearch").innerHTML=this.responseText;
+            document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+            }
+        }
+    xmlhttp.open("GET","livesearch.php?q="+str,true);
+    xmlhttp.send();
+    }
+    </script>
+    </head>
+    <body>
+
+    <form>
+    <input type="text" size="30" onkeyup="showResult(this.value)">
+    <div id="livesearch"></div>
+    </form>
+
+    Source code explanation:
+
+    If the input field is empty (str.length==0), the function clears the content of the livesearch placeholder and exits the function.
+
+    If the input field is not empty, the showResult() function executes the following:
+
+        Create an XMLHttpRequest object
+        Create the function to be executed when the server response is ready
+        Send the request off to a file on the server
+        Notice that a parameter (q) is added to the URL (with the content of the input field)
+    
     
