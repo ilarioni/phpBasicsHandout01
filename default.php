@@ -4345,5 +4345,59 @@ A class is defined by using the class keyword, followed by the name of the class
         An HTML table is created, filled with data, and sent back to the "txtHint" placeholder
 
     
+    AJAX and XML
+    AJAX can be used for interactive communication with an XML file.
+
+    When a user selects a CD in the dropdown list above, a function called "showCD()" is executed. The function is triggered by the "onchange" event:
+
+    <script>
+    function showCD(str) {
+    if (str=="") {
+        document.getElementById("txtHint").innerHTML="";
+        return;
+    }
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+        document.getElementById("txtHint").innerHTML=this.responseText;
+        }
+    }
+    xmlhttp.open("GET","getcd.php?q="+str,true);
+    xmlhttp.send();
+    }
+    </script>
+    </head>
+    <body>
+
+    <form>
+    Select a CD:
+    <select name="cds" onchange="showCD(this.value)">
+    <option value="">Select a CD:</option>
+    <option value="Bob Dylan">Bob Dylan</option>
+    <option value="Bee Gees">Bee Gees</option>
+    <option value="Cat Stevens">Cat Stevens</option>
+    </select>
+    </form>
+    <div id="txtHint"><b>CD info will be listed here...</b></div>
+
+    The showCD() function does the following:
+
+        Check if a CD is selected
+        Create an XMLHttpRequest object
+        Create the function to be executed when the server response is ready
+        Send the request off to a file on the server
+        Notice that a parameter (q) is added to the URL (with the content of the dropdown list)
+
+    The PHP File
+    The page on the server called by the JavaScript above is a PHP file called "getcd.php".
+
+    The PHP script loads an XML document, "cd_catalog.xml", runs a query against the XML file, and returns the result as HTML:
+
+    
+
+
+
+    
+    
 
 
