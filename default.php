@@ -4667,4 +4667,15 @@ A class is defined by using the class keyword, followed by the name of the class
         2. Event-Based Parsers
 
     
+    Tree-Based Parsers
+    Tree-based parsers holds the entire document in Memory and transforms the XML document into a Tree structure. It analyzes the whole document, and provides access to the Tree elements (DOM).
+
+    This type of parser is a better option for smaller XML documents, but not for large XML document as it causes major performance issues.
+
+    Example of tree-based parsers:
+
+        SimpleXML
+        DOM
+    
+
 
