@@ -4785,4 +4785,5 @@ A class is defined by using the class keyword, followed by the name of the class
 
     SimpleXMLElement Object ( [to] => Tove [from] => Jani [heading] => Reminder [body] => Don't forget me this weekend! )
 
-    
+
+    PHP SimpleXML - Get Node/Attribute Values
