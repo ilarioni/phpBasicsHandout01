@@ -4677,5 +4677,14 @@ A class is defined by using the class keyword, followed by the name of the class
         SimpleXML
         DOM
     
+    
+    Event-Based Parsers
+    Event-based parsers do not hold the entire document in Memory, instead, they read in one node at a time and allow you to interact with in real time. Once you move onto the next node, the old one is thrown away.
 
+    This type of parser is well suited for large XML documents. It parses faster and consumes less memory.
 
+    Example of event-based parsers:
+
+        XMLReader
+        XML Expat Parser
+    
