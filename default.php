@@ -4762,4 +4762,27 @@ A class is defined by using the class keyword, followed by the name of the class
     Opening and ending tag mismatch: user line 3 and wronguser
     Opening and ending tag mismatch: email line 4 and wrongemail
 
+    PHP SimpleXML - Read From File
+    The PHP simplexml_load_file() function is used to read XML data from a file.
+
+    Assume we have an XML file called "note.xml", that looks like this:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+    </note>
+
+    The example below shows how to use the simplexml_load_file() function to read XML data from a file:
+    <?php
+    $xml=simplexml_load_file("note.xml") or die("Error: Cannot create object");
+    print_r($xml);
+    ?>
+
+    The output of the code above will be:
+
+    SimpleXMLElement Object ( [to] => Tove [from] => Jani [heading] => Reminder [body] => Don't forget me this weekend! )
+
     
