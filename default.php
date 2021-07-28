@@ -4651,3 +4651,20 @@ A class is defined by using the class keyword, followed by the name of the class
 
 
     PHP XML Parsers
+
+    What is XML?
+    The XML language is a way to structure data for sharing across websites.
+
+    Several web technologies like RSS Feeds and Podcasts are written in XML.
+    XML is easy to create. It looks a lot like HTML, except that you make up your own tags.
+
+    What is an XML Parser?
+    To read and update, create and manipulate an XML document, you will need an XML parser.
+
+    In PHP there are two major types of XML parsers:
+
+        1. Tree-Based Parsers
+        2. Event-Based Parsers
+
+    
+
