@@ -4688,3 +4688,50 @@ A class is defined by using the class keyword, followed by the name of the class
         XMLReader
         XML Expat Parser
     
+    
+    PHP SimpleXML Parser
+    SimpleXML is a PHP extension that allows us to easily manipulate and get XML data.
+
+
+    The SimpleXML Parser
+    SimpleXML is a tree-based parser.
+    SimpleXML provides an easy way of getting an element's name, attributes and textual content if you know the XML document's structure or layout.
+    SimpleXML turns an XML document into a data structure you can iterate through like a collection of arrays and objects.
+    Compared to DOM or the Expat parser, SimpleXML takes a fewer lines of code to read text data from an element.
+
+    PHP SimpleXML - Read From String
+    The PHP simplexml_load_string() function is used to read XML data from a string.
+
+    Assume we have a variable that contains XML data, like this:
+
+    $myXMLData =
+    "<?xml version='1.0' encoding='UTF-8'?>
+    <note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+    </note>";
+
+    The example below shows how to use the simplexml_load_string() function to read XML data from a string:
+
+    <?php
+    $myXMLData =
+    "<?xml version='1.0' encoding='UTF-8'?>
+    <note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+    </note>";
+
+    $xml=simplexml_load_string($myXMLData) or die("Error: Cannot create object");
+    print_r($xml);
+    ?>
+
+    The output of the code above will be:
+
+    SimpleXMLElement Object ( [to] => Tove [from] => Jani [heading] => Reminder [body] => Don't forget me this weekend! )
+
+
+    
