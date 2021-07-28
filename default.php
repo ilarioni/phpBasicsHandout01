@@ -4734,4 +4734,32 @@ A class is defined by using the class keyword, followed by the name of the class
     SimpleXMLElement Object ( [to] => Tove [from] => Jani [heading] => Reminder [body] => Don't forget me this weekend! )
 
 
+    Error Handling Tip: Use the libxml functionality to retrieve all XML errors when loading the document and then iterate over the errors. The following example tries to load a broken XML string:
+
+    <?php
+    libxml_use_internal_errors(true);
+    $myXMLData =
+    "<?xml version='1.0' encoding='UTF-8'?>
+    <document>
+    <user>John Doe</wronguser>
+    <email>john@example.com</wrongemail>
+    </document>";
+
+    $xml = simplexml_load_string($myXMLData);
+    if ($xml === false) {
+        echo "Failed loading XML: ";
+        foreach(libxml_get_errors() as $error) {
+            echo "<br>", $error->message;
+        }
+    } else {
+        print_r($xml);
+    }
+    ?>
+
+    The output of the code above will be:
+
+    Failed loading XML:
+    Opening and ending tag mismatch: user line 3 and wronguser
+    Opening and ending tag mismatch: email line 4 and wrongemail
+
     
